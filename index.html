@@ -26,7 +26,7 @@
     </section>
 
     <section>
-        <h2>Kaggle Data Science Competitions Participation Highlights</h2>
+        <h2>Kaggle Data Science Competitions Highlights</h2>
         <ul>
             <li><a href="https://www.kaggle.com/competitions/playground-series-s5e8/writeups/21st-place-solution"><strong>21st Place Solution Writeup : Binary Classification with a Bank Dataset</strong></a></li>
 
@@ -35,35 +35,8 @@
         </ul>
     </section>
   </main>
-
-<script>
-        // Paste the JavaScript code here
-        window.addEventListener('DOMContentLoaded', (event) => {
-            console.log('The DOM is fully loaded, now fetching content...');
-            
-            fetch('./components/introduction.html')
-                .then(response => response.text())
-                .then(htmlString => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(htmlString, 'text/html');
-
-                    // Mapping source ID (in intro file) to target ID (in index.html)
-                    const mapping = {
-                        'title-content': 'title-content-here',
-                        'bio-content': 'bio-content-here'
-                    };
-
-                    for (const [source, target] of Object.entries(mapping)) {
-                        const srcEl = doc.getElementById(source);
-                        const tarEl = document.getElementById(target);
-                        if (srcEl && tarEl) {
-                            tarEl.innerHTML = srcEl.innerHTML;
-                        }
-                    }
-                })
-                .catch(err => console.error("Script error:", err));
-        });
-</script>
+<script src="./components/config.js"></script>
+<script src="./components/paragraph_loader.js"></script>
 </body>
 
 
