@@ -1,0 +1,82 @@
+/* 1. Global Reset & Variables */
+:root {
+    --primary-color: #2c3e50;    /* Dark Blue-Grey */
+    --accent-color: #3498db;     /* Professional Blue */
+    --bg-color: #f8f9fa;         /* Light Grey Background */
+    --text-color: #333;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 10px;
+    padding: 0;
+}
+
+/* 2. Container (Centers your content like Google Sites) */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    min-height: 100vh;
+}
+
+/* 3. Typography (Makes technical text readable) */
+h1, h2, h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h1 { font-size: 2.5rem; margin-top: 0; }
+h2 { font-size: 1.8rem; margin-top: 1.5em; }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* 4. Navigation/App Links (The cards look) */
+
+.app-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    margin: 10px, 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.app-card {
+    flex: 1;            /* Tells both cards to take up equal space */
+    max-width: 300px;   /* If the screen gets smaller than 300px, they stack */
+    
+    /* Keep your existing styles below (shadow, border, etc.) */
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 5. Footer (For your Privacy Policy links) */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #777;
+    padding-bottom: 20px;
+}

@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BrightDayApps - Android developer / Data Science</title>
+    <meta charset="UTF-8">
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<nav>
-   
-<div>
-    <h2>Android Apps and Data Science</h2>
-    <h3>Android Apps privacy statements:</h3>
-	<p> <a href="privacy_policy/OurLadyOfPortaVagaPrivacyPolicy.html">Our Lady Of Porta Vaga Privacy Policy Statement (ES)</a></p>
-    <p> <a href="privacy_policy/BreadRecipeInventorPrivacyPolicy.html">Bread Recipe Inventor Privacy Policy Statement (EN)</a></p>
-	<p> <a href="privacy_policy/BreadRecipeInventorPrivacyPolicyES.html">Bread Recipe Inventor Privacy Policy Statement (ES)</a></p>
-	<p> <a href="privacy_policy/GroceryPrivacyPolicy.html">The Shopping List Privacy Policy Statement (ES)</a></p>
-	<p> <a href="privacy_policy/WaterOrderPhilippinesPrivacyPolicy.html">Tubig SMS Privacy Policy Statement (ES)</a></p>
-</div>
+  <header>
+    <h1>My Developer Hub</h1>
+    <div id="title-content-here"></div>
+    <div id="bio-content-here"></div>
+  </header> 
 
-<div>
-    <h3>Data Analysis</h3>
-    <p> <a href="data_analysis/mtcars_analysis.html">Analysis Of mtcars dataset</a></p>
-</div>
+  <main>
+    <section>
+        <h2>Published Android Apps on Google Play</h2>
+        <div class="app-grid">
+            <div class="app-card">
+                <a href="https://play.google.com/store/apps/details?id=darkprogs.gmail.com.ourladyofportavaga&hl=en"><strong>Our Lady Of Porta Vaga</strong></a>
+            </div>
+            <div class="app-card">
+                <a href ="https://play.google.com/store/apps/details?id=darkprogs.gmail.com.breadfillingcalculator&hl=en"><strong>BRI Baker's Percentage</strong></a></li>
+            </div>
+        </div>
+    </section>
 
+    <section>
+        <h2>Kaggle Data Science Competitions Participation Highlights</h2>
+        <ul>
+            <li><a href="https://www.kaggle.com/competitions/playground-series-s5e8/writeups/21st-place-solution"><strong>21st Place Solution Writeup : Binary Classification with a Bank Dataset</strong></a></li>
+
+
+            <li><a href="https://www.kaggle.com/competitions/playground-series-s5e5/writeups/pinoystat-8th-place-solution-for-the-predict-calor"><strong>8th Place Solution Writeup: Predict Calorie Expenditure</strong></a></li>
+        </ul>
+    </section>
+  </main>
+
+<script>
+        // Paste the JavaScript code here
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('The DOM is fully loaded, now fetching content...');
+            
+            fetch('./components/introduction.html')
+                .then(response => response.text())
+                .then(htmlString => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlString, 'text/html');
+
+                    // Mapping source ID (in intro file) to target ID (in index.html)
+                    const mapping = {
+                        'title-content': 'title-content-here',
+                        'bio-content': 'bio-content-here'
+                    };
+
+                    for (const [source, target] of Object.entries(mapping)) {
+                        const srcEl = doc.getElementById(source);
+                        const tarEl = document.getElementById(target);
+                        if (srcEl && tarEl) {
+                            tarEl.innerHTML = srcEl.innerHTML;
+                        }
+                    }
+                })
+                .catch(err => console.error("Script error:", err));
+        });
+</script>
 </body>
+
+
+<footer>
+    <p>© 2026 | Developer Privacy Policies</p>
+    <nav>
+        <small>
+            Legal: 
+            <a href="privacy_policy/OurLadyOfPortaVagaPrivacyPolicy.html">Our Lady Of Porta Vaga</a> | 
+            <a href="privacy_policy/BreadRecipeInventorPrivacyPolicy.html">BRI Baker's Percentage</a> |
+            <a href="privacy_policy/BreadRecipeInventorPrivacyPolicyES.html">BRI Baker's Percentage ES</a> |
+            <a href="privacy_policy/GroceryPrivacyPolicy.html">Shopping List</a> |
+            <a href="privacy_policy/WaterOrderPhilippinesPrivacyPolicy.html">Tubig SMS</a>
+        </small>
+    </nav>
+</footer>
 </html>
