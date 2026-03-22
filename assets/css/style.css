@@ -52,7 +52,7 @@ a:hover {
 .app-grid{
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     gap: 10px;
     margin: 10px, 10px;
     flex-wrap: wrap;
@@ -60,16 +60,22 @@ a:hover {
 }
 
 .app-card {
-    flex: 1;            /* Tells both cards to take up equal space */
-    max-width: 300px;   /* If the screen gets smaller than 300px, they stack */
+    display: flex;            /* Tells both cards to take up equal space */
+    max-width: 200px;   /* If the screen gets smaller than 300px, they stack */
     
     /* Keep your existing styles below (shadow, border, etc.) */
     background: #fff;
+    flex-direction: row;
     padding: 10px;
     margin: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    justify-content:center;
+    align-items:center;
+    text-align: left;
+    min-height: 100px;
+    gap: 12px;
 }
 
 /* 5. Footer (For your Privacy Policy links) */
@@ -79,4 +85,12 @@ footer {
     font-size: 0.9rem;
     color: #777;
     padding-bottom: 20px;
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px; /* Gives it that modern Android look */
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }

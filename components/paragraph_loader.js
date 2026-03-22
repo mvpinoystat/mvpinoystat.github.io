@@ -28,6 +28,18 @@
                         // siteConfig came from config.js file:
                         nameSlot.innerText = siteConfig.ownerName
                     }
+
+                    //icons:
+                    siteConfig.apps.forEach(
+                        app => {
+                            const iconElement = document.getElementById(app.id)
+                            if (iconElement){
+                                iconElement.src = app.iconPath;
+                                iconElement.alt = app.name + " Icon";
+                            }
+
+                        }
+                    )
                     
 
                 })
