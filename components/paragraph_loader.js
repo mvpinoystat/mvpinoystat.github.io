@@ -13,6 +13,8 @@
                     const mapping = {
                         'title-content': 'title-content-here',
                         'bio-content': 'bio-content-here',
+                        'android-summary':'android-summary-here',
+                        'kaggle-summary':'kaggle-summary-here'
                     };
 
                     for (const [source, target] of Object.entries(mapping)) {
